@@ -1,15 +1,26 @@
 import React from 'react'
-import { store, Inject } from '../../dist'
+import { Inject } from '../../dist'
+import { AddTodo } from './actions'
 
 export default class Footer extends React.Component {
+  constructor() {
+    super()
+    this.state = {}
+  }
   componentDidMount() {
-    setTimeout(() => store.dispatch('todos', () => ['new todos from footer!']), 2000)
+    AddTodo('new todos from footer!')
   }
 
   render() {
     return (
       <div>
-        <p>Click here for new todo</p>
+        <input
+          onChange={e => this.setState({ text: e.target.value })}
+        />
+        <button
+          onClick={() => AddTodo(this.state.text)}>
+          Add Todo
+        </button>
 
         <Inject state="todos" defaultValue={[]}>
           {todos => (
