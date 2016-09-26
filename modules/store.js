@@ -1,7 +1,7 @@
-export default (initialState = {}) => {
+const store = (initialState = {}) => {
   let state = initialState
   let listeners = {}
-  
+
   return {
      dispatch(key, action) {
        let newState = action(state[key])
@@ -14,5 +14,7 @@ export default (initialState = {}) => {
      },
      state: { ...state },
   }
-    
+
 }
+
+export default store()

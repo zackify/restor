@@ -1,16 +1,16 @@
+import React from 'react';
 import Todos from './todos'
 import Footer from './footer'
 
 class App extends React.Component {
   render() {
     return (
-      <Todos />
-      <Footer />
-    )
+      <div>
+        <Todos />
+        <Footer />
+      </div>
+    );
   }
- }
-  
-ReactDOM.render(
-  <App />,
-  document.getElementById('container')
-);
+}
+
+export default App;

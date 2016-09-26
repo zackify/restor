@@ -2,9 +2,9 @@
   "name": "restor",
   "version": "0.0.1",
   "description": "simplest react state management",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel modules --out-dir dist"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/zackify/restor/issues"
   },
-  "homepage": "https://github.com/zackify/restor#readme"
+  "homepage": "https://github.com/zackify/restor#readme",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1"
+  },
+  "peerDependencies": {
+    "react": "^15.3.2"
+  }
 }
