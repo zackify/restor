@@ -19,7 +19,9 @@ See `/example`. Clone, npm install, npm start to see.
 Anywhere you need to update state from a different place, you import the store, and dispatch an update. The example covers this very well.
 
 
-```todos.js
+```js
+//todos.js
+
 import React from 'react';
 import { connection } from 'restor'
 
@@ -49,7 +51,9 @@ export default () => (
 
 Now, in a completely separate place in the react state tree, we can call `store.dispatch`
 
-```random-component.js
+```js
+//random-component.js
+
 import { store } from 'restor'
 
 ...
