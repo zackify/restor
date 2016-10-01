@@ -22,7 +22,7 @@ export default class Footer extends React.Component {
           Add Todo
         </button>
 
-        <Inject state="todos" defaultValue={[]}>
+        <Inject state="todos">
           {todos => (
             <p>There are currently {todos.length} todos</p>
           )}

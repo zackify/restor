@@ -5,15 +5,24 @@ export default ( key, defaultValue = {} ) => component => class RestorWrapper ex
   constructor() {
     super()
     this.state = { [key]: store.state[key] }
+    this.onData = this.onData.bind(this)
   }
 
   componentDidMount() {
-    store.on(key, state => this.setState({ [key]: state}))
+    store.listen(key, this.onData)
+  }
+
+  componentWillUnmount() {
+    store.unlisten(key, this.onData)
+  }
+
+  onData(data) {
+    this.setState({ [key]: data })
   }
 
   render() {
     let data = this.state[key]
-    if(!data) data = defaultValue
+    if(!data) return null
     return React.createElement(component, { [key]: data })
   }
 }

@@ -1,5 +1,5 @@
-import { store } from '../../dist'
+import { dispatch } from '../../dist'
 
 export function AddTodo(todo) {
-  store.dispatch('todos', (state = []) => state.concat([ todo ]))
+  dispatch('todos', (state = []) => state.concat([ todo ]))
 }

@@ -6,4 +6,4 @@ const Todos = ({ todos }) => (
     {todos.map(post => <div key={post}>{post}</div>)}
   </div>
 )
-export default connection('todos', [])(Todos)
+export default connection('todos')(Todos)

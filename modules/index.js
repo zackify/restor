@@ -1,9 +1,14 @@
-import store from './store'
+import { dispatch, listen, unlisten, state, use } from './store'
 import connection from './connection'
 import Inject from './inject'
 
-export {
-  store,
+module.exports = {
+  use,
+  state,
+  listen,
+  unlisten,
+  dispatch,
+  //components
   Inject,
   connection,
 }
