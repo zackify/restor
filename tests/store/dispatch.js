@@ -1,4 +1,4 @@
-import { dispatch, state } from '../../dist'
+import { dispatch, state } from '../../modules'
 
 describe('dispatch', () => {
   it('updates store state on dispatch', () => {
