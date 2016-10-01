@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/zackify/restor.svg?style=svg&circle-token=ac016b20203ae7e83ea04ccaf0df3248fc62f118)](https://circleci.com/gh/zackify/restor)
+
 # restor
 simpler-than-redux react state management
 

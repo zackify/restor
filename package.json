@@ -4,7 +4,8 @@
   "description": "simplest react state management",
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel modules --out-dir dist"
+    "build": "babel modules --out-dir dist",
+    "test": "mocha --require babel-register --require tests/setup tests --recursive"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,9 @@
     "babel-cli": "^6.14.0",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-preset-es2015": "^6.14.0",
-    "babel-preset-react": "^6.11.1"
+    "babel-preset-react": "^6.11.1",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.0"
   },
   "peerDependencies": {
     "react": "^15.3.2"
