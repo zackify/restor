@@ -107,7 +107,6 @@ This gives you the current state at the specfied key, and you must return a new 
 
 `Inject` Component Props:
 - state `state={state key}`
-- defaultValue `defaultValue={[]}` before any state exists
 
 `connection` HOC:
-- `connection(state key, defaultValue)(Component)`
+- `connection(state key)(Component)`
