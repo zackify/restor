@@ -2,3 +2,4 @@ example
 modules
 .gitignore
 circle.yml
+.babelrc
