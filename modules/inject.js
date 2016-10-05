@@ -4,7 +4,7 @@ import store from './store'
 export default class RestorInjector extends React.Component {
   constructor({ state }) {
     super()
-    this.state = { [state]: store.state[state] }
+    this.state = { [state]: store.state()[state] }
     this.onData = this.onData.bind(this)
   }
 

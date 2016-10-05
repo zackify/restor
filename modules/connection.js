@@ -4,7 +4,7 @@ import store from './store'
 export default ( key, defaultValue = {} ) => component => class RestorWrapper extends React.Component {
   constructor() {
     super()
-    this.state = { [key]: store.state[key] }
+    this.state = { [key]: store.state()[key] }
     this.onData = this.onData.bind(this)
   }
 
