@@ -8,7 +8,9 @@ const store = (initialState = {}) => {
       middleware.push(...fn)
     },
     dispatch(key, action) {
-      let newState = action(state[key])
+      let newState = action
+      if(typeof action === 'function') newState = action(state[key])
+
       state = { ...state, [key]: newState }
       middleware.forEach(fn => fn({...instance, state: () => state })(value => newState = value)({ key, value: newState }))
       state = { ...state, [key]: newState }
