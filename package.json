@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel modules --out-dir dist",
     "test": "mocha --require babel-register --require tests/js-dom --require tests/setup tests --recursive",
-    "cover": "istanbul cover node_modules/.bin/_mocha -- --require babel-register --require tests/js-dom --require tests/setup tests --recursive"
+    "cover": "istanbul cover node_modules/.bin/_mocha -- --require babel-register --require tests/js-dom --require tests/setup tests --recursive && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
