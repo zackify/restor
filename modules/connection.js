@@ -23,6 +23,6 @@ export default ( key, defaultValue = {} ) => component => class RestorWrapper ex
   render() {
     let data = this.state[key]
     if(!data) return null
-    return React.createElement(component, { [key]: data })
+    return React.createElement(component, { data })
   }
 }
