@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/gh/zackify/restor.svg?style=svg&circle-token=ac016b20203ae7e83ea04ccaf0df3248fc62f118)](https://circleci.com/gh/zackify/restor)
+[![Coverage Status](https://coveralls.io/repos/github/zackify/restor/badge.svg?branch=master)](https://coveralls.io/github/zackify/restor?branch=master)
 
 # restor
 simpler-than-redux react state management
