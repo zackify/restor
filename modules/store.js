@@ -11,9 +11,9 @@ const store = (initialState = {}) => {
       let newState = action
       if(typeof action === 'function') newState = action(state[key])
 
-      state = { ...state, [key]: newState }
-      middleware.forEach(fn => fn({...instance, state: () => state })(value => newState = value)({ key, value: newState }))
-      state = { ...state, [key]: newState }
+      if(middleware.length === 0) state = { ...state, [key]: newState }
+      else middleware.forEach(fn => fn(instance)(({ key, value }) => state = { ...state, [key]: value })({ key, value: newState }))
+
       if(listeners[key]) listeners[key].forEach(listener => listener(newState))
     },
     listen(key, cb, initial) {

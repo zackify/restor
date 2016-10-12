@@ -6,4 +6,16 @@ describe('dispatch', () => {
 
     expect(state().test).to.equal('test value')
   })
+
+  it('updates store state with plain value', () => {
+    dispatch('test', 'test value')
+
+    expect(state().test).to.equal('test value')
+  })
+
+  it('modifies current state', () => {
+    dispatch('test', state => state + ' blah')
+
+    expect(state().test).to.equal('test value blah')
+  })
 })
