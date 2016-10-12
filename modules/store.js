@@ -27,6 +27,11 @@ const store = (initialState = {}) => {
     },
     state() {
       return { ...state }
+    },
+    reset() {
+      state = {}
+      listeners = {}
+      middleware = []
     }
   }
 

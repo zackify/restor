@@ -1,4 +1,4 @@
-import { use, dispatch, state } from '../../modules'
+import { use, dispatch, state, reset } from '../../modules'
 
 describe('middleware', () => {
   it('updates store state on next', () => {
@@ -14,7 +14,7 @@ describe('middleware', () => {
 
     use(middleware)
     dispatch('test', () => 'new value')
-
+    reset()
   })
 
   it('dispatches new action from middleware', () => {
@@ -28,5 +28,23 @@ describe('middleware', () => {
     use(middleware)
     dispatch('coolAction', () => 'dispatches a logger')
     expect(state().logger[0]).to.equal('another action: dispatches a logger')
+    reset()
+  })
+
+  it('registers multiple middleware', () => {
+    const data = spy()
+    const middlewareOne = store => next => action => {
+      next(action)
+      data()
+    }
+    const middlewareTwo = store => next => action => {
+      next(action)
+      data()
+    }
+
+    use([ middlewareOne, middlewareTwo ])
+    dispatch('blah', 'hiiii')
+
+    expect(data.calledTwice).to.equal(true)
   })
 })

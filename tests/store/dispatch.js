@@ -1,4 +1,4 @@
-import { dispatch, state } from '../../modules'
+import { dispatch, state, reset } from '../../modules'
 
 describe('dispatch', () => {
   it('updates store state on dispatch', () => {
@@ -17,5 +17,11 @@ describe('dispatch', () => {
     dispatch('test', state => state + ' blah')
 
     expect(state().test).to.equal('test value blah')
+  })
+
+  it('resets state', () => {
+    dispatch('new', 'hah')
+    reset()
+    expect(state().new).to.be.undefined
   })
 })

@@ -7,6 +7,24 @@ describe('listen', () => {
     dispatch('listentest', () => 'listening')
   })
 
+  it('calls listen with current state on creation', () => {
+    const onData = spy()
+    dispatch('listeninitial', () => 'listening')
+
+    listen('listeninitial', onData, true)
+
+    expect(onData.calledOnce).to.equal(true)
+  })
+
+  it('doesnt call listen with current state on creation', () => {
+    const onData = spy()
+    dispatch('listeninitial', () => 'listening')
+
+    listen('listeninitial', onData)
+
+    expect(onData.called).to.equal(false)
+  })
+
   it('unlistens from listener', () => {
     const onData = spy()
     listen('listentest2', onData)
