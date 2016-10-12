@@ -3,3 +3,6 @@ modules
 .gitignore
 circle.yml
 .babelrc
+coverage
+tests
+yarn.lock

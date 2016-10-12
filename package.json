@@ -1,6 +1,6 @@
 {
   "name": "restor",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "simplest react state management",
   "main": "dist/index.js",
   "scripts": {
